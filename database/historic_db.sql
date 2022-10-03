@@ -36,5 +36,7 @@ CREATE EVENT IF NOT EXISTS stock_screener_store
     ON SCHEDULE
         EVERY 1 DAY
             STARTS
-            END
+            END |
+
+delimiter ;
 
