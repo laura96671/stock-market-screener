@@ -15,7 +15,7 @@ class News:
             df_prem_news["Stock"] = ticker
             self.today = date.today()
             df_prem_news["Provider"] = "PREMARKET"
-            df_prem_news = df_prem_news[df_prem_news.Date >= self.today]
+            df_prem_news = df_prem_news[df_prem_news.Date.dt.date >= self.today]
             df_prem_news = df_prem_news[["Stock", "Date", "Title", "Link", "Provider"]]
             df_prem_news.dropna(inplace=True)
 
@@ -36,7 +36,7 @@ class News:
             df_rth_news["Stock"] = ticker
             self.today = date.today()
             df_rth_news["Provider"] = "RTH"
-            df_rth_news = df_rth_news[df_rth_news.Date >= self.today]
+            df_rth_news = df_rth_news[df_rth_news.Date.dt.Date >= self.today]
             df_rth_news = df_rth_news[["Stock", "Date", "Title", "Link", "Provider"]]
 
             df_rth_news.dropna(inplace=True)

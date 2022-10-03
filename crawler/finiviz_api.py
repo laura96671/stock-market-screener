@@ -21,6 +21,7 @@ class FinivizData:
     def finiviz_tickers(self, df):
         return df["Ticker"]
 
+
 class RetrievingFinivizData:
 
     def __init__(self):

@@ -11,11 +11,13 @@ class Screener:
     def premarket_screener(self, df_prem_screen):
         df_prem_screen["Chg. %"] = df_prem_screen["Chg. %"].replace({"%": ""}, regex=True).astype(float)
         df_prem_screen["Vol."] = df_prem_screen["Vol."].replace({"K": "*1e3", "M": "*1e6", "B": "*1e9"}, regex=True).map(pd.eval).astype(int)
+        df_prem_screen["Vol."] = df_prem_screen["Vol."].map(pd.eval).astype(int)
 
         self.today = date.today()
         today = self.today.strftime('%Y-%m-%d')
-        df_prem_screen["Time"] = today + " " + df_prem_screen["Time"]
-        df_prem_screen["Time"] = pd.to_datetime(df_prem_screen["Time"], format='%Y-%m-%d %H:%M:%S')
+        # df_prem_screen["Time"] = today + " " + df_prem_screen["Time"]
+        # df_prem_screen["Time"] = pd.to_datetime(df_prem_screen["Time"], format='%Y-%m-%d %H:%M:%S')
+        df_prem_screen["Time"] = df_prem_screen["Time"]
         df_prem_screen["Provider"] = "PREMARKET"
 
         df_prem_screen = df_prem_screen.loc[:, ~df_prem_screen.columns.str.contains('^Unnamed')]

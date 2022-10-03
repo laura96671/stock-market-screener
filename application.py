@@ -18,6 +18,7 @@ screener_execution = ScreenerExecution()
 news_execution = SearchingNews()
 database = Database()
 
+
 #while True:
 if time_of_day() == "PREMARKET":
     print("Retrieving top premarket movers...")
@@ -44,8 +45,7 @@ elif time_of_day() == "REGULAR TRADING HOURS":
     print(news_execution.rth_news_crawler())
     database.rth_news_screener()
 
-            # sleep for x secs
+    # sleep for x secs
 
-        #else:
-            #sleep
-            #connection.close()
+#else:
+    #sleep
