@@ -1,5 +1,5 @@
 ## Project Description
-Stock market & news screener that retrieves premarket/regular trading hours major movers and daily news using Finviz APIs
+The screener retrieves major movers and daily news using Finviz APIs during both premarket and regular trading hours
 
 ![screener](https://user-images.githubusercontent.com/106548240/193538647-38eb0a70-4cec-43b2-bf54-be71875780e7.png)
 
