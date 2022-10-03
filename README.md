@@ -1,7 +1,11 @@
+## Screener
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/106548240/193538647-38eb0a70-4cec-43b2-bf54-be71875780e7.png" />
+</p>
+
 ## Project Description
 The screener retrieves major movers and daily news using Finviz APIs during premarket and regular trading hours
-
-![screener](https://user-images.githubusercontent.com/106548240/193538647-38eb0a70-4cec-43b2-bf54-be71875780e7.png)
 
 ## Usage
 To clone the project:
