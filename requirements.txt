@@ -1,0 +1,8 @@
+finvizfinance
+sqlalchemy
+tabulate
+pandas
+pytz
+sqlalchemy
+pymysql
+cryptography

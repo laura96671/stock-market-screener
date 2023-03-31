@@ -1,16 +1,16 @@
 import pandas as pd
 import urllib.request
-from configparser import ConfigParser
+import os
 
-config = ConfigParser()
-config.read('/Users/lauraschiavulli/Downloads/python/edgar/config/config.ini')
+user_agent = os.getenv('USER_AGENT')
+url = os.getenv('URL')
 
 
 class InvestingData:
 
     def __init__(self):
-        self.headers = {'User-Agent': config.get('INVESTING', 'USER_AGENT')}
-        self.request = urllib.request.Request(config.get('INVESTING', 'URL'), None, self.headers)
+        self.headers = {'User-Agent': user_agent}
+        self.request = urllib.request.Request(url, None, self.headers)
         self.response = urllib.request.urlopen(self.request)
         self.data = self.response.read()
 

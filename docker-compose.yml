@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    image: financial_app:latest
+    volumes:
+      - .:/code
+    ports:
+      - 8080:8080
+    environment:
+      MYSQL_HOST_IP: host.docker.internal
+      MYSQL_USER: "root"
+      MYSQL_PWD: "password"
+      MYSQL_DB: "Edgar"
+
+      USER_AGENT: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
+      URL: 'https://www.investing.com/equities/pre-market'

@@ -1,23 +1,26 @@
 from sqlalchemy import create_engine
-from configparser import ConfigParser
 from screener.screener import ScreenerExecution
 from news.news import SearchingNews
 import warnings
+import os
 
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
-config = ConfigParser()
-config.read('/Users/lauraschiavulli/Downloads/python/edgar/config/config.ini')
+host = os.getenv('MYSQL_HOST_IP')
+db = os.getenv('MYSQL_DB')
+user = os.getenv('MYSQL_USER')
+pwd = os.getenv('MYSQL_PWD')
 
-engine = create_engine("mysql+pymysql://{user}:{pw}@{host}/{db}".format(host = 'localhost',
-                                                                        db = 'Edgar',
-                                                                        user = config.get('DATABASE', 'USER'),
-                                                                        pw = config.get('DATABASE', 'PASSWORD')))
+engine = create_engine("mysql+pymysql://{user}:{pw}@{host}/{db}".format(host=host,
+                                                                        db=db,
+                                                                        user=user,
+                                                                        pw=pwd))
 
 '''
 REAL TIME DATABASE
 '''
+
 
 class Database:
 
